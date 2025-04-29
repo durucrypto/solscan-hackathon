@@ -8,7 +8,7 @@ const { Telegraf } = require("telegraf");
 const telegramBot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
 const trendingTokensMap = new Map();
-let pairsTimestamp = Math.floor(Date.now() / 1000);
+let pairsTimestamp = Math.floor(Date.now() / 1000); // will be used to store latest pair's timestamp
 
 const majorTokensArray = [
     "So11111111111111111111111111111111111111112",  // wsol's address
