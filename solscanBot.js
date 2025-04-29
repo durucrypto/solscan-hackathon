@@ -18,13 +18,13 @@ const majorTokensArray = [
 
 /******************************************************************************************/
 
-function formatBigNumber(num) {
+function formatBigNumber(num, prefix) {
     if (num) {
-        if (num >= 1e12) { return (num / 1e12).toFixed(1) + "T"; } // Convert to trillions
-        else if (num >= 1e9) { return (num / 1e9).toFixed(1) + "B"; } // Convert to billions
-        else if (num >= 1e6) { return (num / 1e6).toFixed(1) + "M"; } // Convert to millions
-        else if (num >= 1e3 || num >= 1e2) { return (num / 1e3).toFixed(1) + "K"; } // Convert to thousands
-        else { return num; }
+        if (num >= 1e12) { return `${prefix}${(num / 1e12).toFixed(1)}T`; } // Convert to trillions
+        else if (num >= 1e9) { return `${prefix}${(num / 1e9).toFixed(1)}B`; } // Convert to billions
+        else if (num >= 1e6) { return `${prefix}${(num / 1e6).toFixed(1)}M`; } // Convert to millions
+        else if (num >= 1e3 || num >= 1e2) { return `${prefix}${(num / 1e3).toFixed(1)}K`; } // Convert to thousands
+        else { return prefix + num; }
     }
 
     return "";
