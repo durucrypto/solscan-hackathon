@@ -51,19 +51,39 @@ This tool is built to:
 ## ⚙️ Setup Instructions
 
 1. Clone the repository:
-   git clone https://github.com/durucrypto/solscan-hackathon.git
-   
+
+    ```bash
+    git clone https://github.com/durucrypto/solscan-hackathon.git
+    ```
+
 2. Change the directory:
-   cd solscan-hackathon
+
+    ```bash
+    cd solscan-hackathon
+    ```
 
 3. Install dependencies:
-   npm install
 
-4. Create your .env file:
-   cp sample.env .env
-   #### Then open .env and add your config values
+    ```bash
+    npm install
+    ```
+
+4. Create your `.env` file:
+
+    ```bash
+    cp sample.env .env
+    ```
+
+    Then open `.env` and add your config values.
 
 5. Start the bot:
-   npm start
-   #### or, if you prefer:
-   node solscanBot.js
+
+    ```bash
+    npm start
+    ```
+
+    Or, if you prefer:
+
+    ```bash
+    node solscanBot.js
+    ```
