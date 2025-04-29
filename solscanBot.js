@@ -33,13 +33,20 @@ function formatBigNumber(num) {
 function calculateTimeDiff(now, pastTimestamp) {
     if (pastTimestamp) {
         const past = dayjs(pastTimestamp * 1000);
-        const diff = now.diff(past, "minute");
 
-        const days = Math.floor(diff / (60 * 24));
-        const hours = Math.floor(diff / 60);
-        const minutes = diff % 60;
+        const years = now.diff(past, "year");
+        const months = now.diff(past, "month") % 12;
+        const days = now.diff(past, "day") % 30;
+        const hours = now.diff(past, "hour") % 24; 
+        const minutes = now.diff(past, "minute") % 60;
 
-        if (days > 0) {
+        if (years > 0) {
+            return `${years}y ${months}mo ago`;
+
+        } else if (months > 0) {
+            return `${months}mo ${days}d ago`;
+
+        } else if (days > 0) {
             return `${days}d ${hours}h ago`; 
 
         } else if (hours > 0) {
