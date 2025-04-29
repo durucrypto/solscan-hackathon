@@ -44,7 +44,7 @@ This tool is built to:
 ## 🔗 Telegram Channels
 
 - **Trending Tokens:** [Join Channel](https://t.me/solscan_hackathon_trending)
-- **New Pairs:** [Join Channel](https://t.me/solscan_hackathon_new)
+- **New Pairs:** [Join Channel](https://t.me/solscan_hackathon_pairs)
 
 ---
 
