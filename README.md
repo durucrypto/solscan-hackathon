@@ -43,8 +43,8 @@ This tool is built to:
 
 ## 🔗 Telegram Channels
 
-- **Trending Tokens:** [t.me/](https://t.me/)
-- **New Pairs:** [t.me/](https://t.me/)
+- **Trending Tokens:** [Join Channel](https://t.me/solscan_hackathon_trending)
+- **New Pairs:** [Join Channel](https://t.me/solscan_hackathon_new)
 
 ---
 
@@ -59,9 +59,9 @@ This tool is built to:
 
 3. Create your .env file:
    cp sample.env .env
-   # Then open .env and add your config values
+   #### Then open .env and add your config values
 
 4. Start the bot:
    npm start
-   # or, if you prefer:
+   #### or, if you prefer:
    node solscanBot.js
