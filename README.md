@@ -52,6 +52,8 @@ This tool is built to:
 
 1. Clone the repository:
    git clone https://github.com/durucrypto/solscan-hackathon.git
+   
+2. Change the directory:
    cd solscan-hackathon
 
 3. Install dependencies:
