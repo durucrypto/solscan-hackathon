@@ -1,0 +1,20 @@
+{
+  "name": "solscan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "solscanBot.js",
+  "scripts": {
+    "start": "node solscanBot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
+    "dedent": "^1.5.3",
+    "dotenv": "^16.5.0",
+    "telegraf": "^4.16.3"
+  }
+}
