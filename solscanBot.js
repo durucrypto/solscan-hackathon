@@ -18,13 +18,13 @@ const majorTokensArray = [
 
 /******************************************************************************************/
 
-function formatBigNumber(num, prefix) {
+function formatBigNumber(num) {
     if (num) {
-        if (num >= 1e12) { return `${prefix}${(num / 1e12).toFixed(1)}T`; } // Convert to trillions
-        else if (num >= 1e9) { return `${prefix}${(num / 1e9).toFixed(1)}B`; } // Convert to billions
-        else if (num >= 1e6) { return `${prefix}${(num / 1e6).toFixed(1)}M`; } // Convert to millions
-        else if (num >= 1e3 || num >= 1e2) { return `${prefix}${(num / 1e3).toFixed(1)}K`; } // Convert to thousands
-        else { return prefix + num; }
+        if (num >= 1e12) { return `$${(num / 1e12).toFixed(1)}T`; } // Convert to trillions
+        else if (num >= 1e9) { return `$${(num / 1e9).toFixed(1)}B`; } // Convert to billions
+        else if (num >= 1e6) { return `$${(num / 1e6).toFixed(1)}M`; } // Convert to millions
+        else if (num >= 1e3 || num >= 1e2) { return `$${(num / 1e3).toFixed(1)}K`; } // Convert to thousands
+        else { return `$${num}`; }
     }
 
     return "";
@@ -40,7 +40,6 @@ function calculateTimeDiff(now, pastTimestamp) {
         const hours = now.diff(past, "hour") % 24; 
         const minutes = now.diff(past, "minute") % 60;
         const seconds = now.diff(past, "second") % 60;
-
 
         if (years > 0) {
             return `${years}y ${months}mo ago`;
@@ -159,7 +158,6 @@ async function getPairs(shouldNotify) {
             } catch(error) {
                 console.error(error);
                 pairsTimestamp =  Math.floor(Date.now() / 1000);
-                shouldContinue = false;
                 return;
             }
         }
@@ -180,20 +178,20 @@ async function postTrendingTokens(addedTokensArray, removedTokensArray) {
         let message = "";
 
         if (addedTokensArray.length > 0) {
-            message += "<b>🔥 Tokens added to the trending list:</b>\n";
+            message += "<b>🔥 Tokens added to the trending list:</b>";
 
             for (let i = 0; i < addedTokensArray.length; i++) {
-                message += `  ├ <code>Token ${i + 1}:</code> <a href="https://solscan.io/token/${addedTokensArray[i].address}">#${addedTokensArray[i].symbol}</a>` + "\n"; 
+                message += `\n  ├ <code>Token ${i + 1}:</code> <a href="https://solscan.io/token/${addedTokensArray[i].address}">#${addedTokensArray[i].symbol}</a>`; 
             }
 
-            message = message.replace(/├(?![\s\S]*├)/, "└") + "\n";
+            message = message.replace(/├(?![\s\S]*├)/, "└") + "\n\n";
         }
 
         if (removedTokensArray.length > 0) {
-            message += "<b>👎 Tokens removed from the trending list:</b>\n";
+            message += "<b>👎 Tokens removed from the trending list:</b>";
 
             for (let i = 0; i < removedTokensArray.length; i++) {
-                message += `  ├ <code>Token ${i + 1}:</code> <a href="https://solscan.io/token/${removedTokensArray[i].address}">#${removedTokensArray[i].symbol}</a>` + "\n"; 
+                message += `\n  ├ <code>Token ${i + 1}:</code> <a href="https://solscan.io/token/${removedTokensArray[i].address}">#${removedTokensArray[i].symbol}</a>`; 
             }
 
             message = message.replace(/├(?![\s\S]*├)/, "└");
@@ -202,7 +200,7 @@ async function postTrendingTokens(addedTokensArray, removedTokensArray) {
         if (message) {
             await telegramBot.telegram.sendMessage(
                 process.env.TELEGRAM_TRENDING_CHANNEL,
-                message,
+                message.trimEnd(),
                 {
                     parse_mode: "HTML",
                     disable_web_page_preview: true
