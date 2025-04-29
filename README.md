@@ -27,7 +27,7 @@ This project aims to provide a convenient and transparent way to:
 1. Every 10 seconds (adjustable), the bot makes requests for trending tokens and new LP pairs to the Solscan API.
 2. For trending tokens, it compares the current list with the new list to figure out new additions and removals.
 3. For new pairs, it compares timestamps to detect new pairs.
-4. When new trending tokens or LP pairs are found, it sends formatted alerts to Telegram.
+4. When new trending tokens or LP pairs are found, it sends formatted alerts on Telegram.
 
 ---
 
