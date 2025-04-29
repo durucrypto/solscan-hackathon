@@ -1,6 +1,6 @@
-# 🔍 Solana Trending Tokens & New LP Pairs Tracker Bot
+# 🔍 Trending Tokens & New LP Pairs Tracker Bot
 
-A Telegram bot that helps you stay on top of **trending tokens** and **newly created token pairs** on the **Solana blockchain**, with built-in insights and safety checks.
+A Telegram bot that helps you stay on top of **trending tokens** and **newly created token pairs** on the **Solana blockchain**, utilizing [Solscan's Pro API](https://pro-api.solscan.io/) for real-time data and enhanced tracking.
 
 ---
 
