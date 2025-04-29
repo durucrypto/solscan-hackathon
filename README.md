@@ -51,8 +51,8 @@ This tool is built to:
 ## ⚙️ Setup Instructions
 
 1. Clone the repository:
-   git clone https://github.com/your-repo/solscan-bot.git
-   cd solscan-bot
+   git clone https://github.com/durucrypto/solscan-hackathon.git
+   cd solscan-hackathon
 
 2. Install dependencies:
    npm install
