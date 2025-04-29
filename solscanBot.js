@@ -39,6 +39,8 @@ function calculateTimeDiff(now, pastTimestamp) {
         const days = now.diff(past, "day") % 30;
         const hours = now.diff(past, "hour") % 24; 
         const minutes = now.diff(past, "minute") % 60;
+        const seconds = now.diff(past, "second") % 60;
+
 
         if (years > 0) {
             return `${years}y ${months}mo ago`;
@@ -51,9 +53,12 @@ function calculateTimeDiff(now, pastTimestamp) {
 
         } else if (hours > 0) {
             return `${hours}h ${minutes}m ago`;
-
+            
+        } else if (minutes > 0) {
+            return `${minutes}m ${seconds}s ago`;
+            
         } else {
-            return `${minutes}m ago`; 
+            return `${seconds}s ago`;
         }
     }
 
